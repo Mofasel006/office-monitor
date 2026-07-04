@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Office Power Monitor</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>⚡ Office Power Monitor</h1>
+    <div id="connectionDot" class="dot offline" title="Connecting..."></div>
+  </header>
+
+  <section class="meter-row">
+    <div class="meter-card">
+      <div class="meter-label">Total Power Draw</div>
+      <div class="meter-value" id="totalWatts">-- W</div>
+    </div>
+    <div class="meter-card">
+      <div class="meter-label">Est. Usage Today</div>
+      <div class="meter-value" id="kwhToday">-- kWh</div>
+    </div>
+    <div class="meter-card">
+      <div class="meter-label">Devices ON</div>
+      <div class="meter-value" id="onCount">--</div>
+    </div>
+  </section>
+
+  <main class="main-grid">
+    <div class="floorplan-wrap">
+      <h2>Office Layout</h2>
+      <div id="floorplan"></div>
+    </div>
+
+    <div class="side-panels">
+      <div class="panel">
+        <h2>Live Device Status</h2>
+        <div id="deviceStatus"></div>
+      </div>
+      <div class="panel">
+        <h2>Active Alerts</h2>
+        <div id="alertsPanel"><p class="empty">No alerts. All quiet.</p></div>
+      </div>
+    </div>
+  </main>
+
+  <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
